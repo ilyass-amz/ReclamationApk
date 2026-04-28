@@ -70,24 +70,26 @@ body {
 
 .topbar h1 {
   margin: 0;
-}
-
-.app-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  background: #111;
-  border-radius: 9px;
-  padding: 6px 10px;
+  font-size: 22px;
+  color: #ffffff;
   letter-spacing: 0.28rem;
   text-transform: uppercase;
 }
 
-.app-title-main {
-  color: #fff;
+.brand-logo {
+  height: 34px;
+  width: auto;
+  display: block;
 }
 
-.app-title-accent {
+.app-name {
+  color: #ffffff !important;
+  background: #101010;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.accent-dot {
   color: var(--brand-accent);
 }
 
@@ -135,20 +137,21 @@ body {
 }
 
 .theme-btn {
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  border-radius: 50%;
   border: 1px solid var(--brand-accent);
-  background: var(--brand-surface-2);
-  color: var(--brand-accent);
-  font-size: 17px;
-  line-height: 1;
+  background: transparent;
+  color: var(--brand-text);
+  padding: 7px 12px;
 }
 
-.theme-btn:hover {
-  background: var(--brand-accent);
-  color: #fff;
+.icon-only {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
 }
 
 .logout-btn:hover {

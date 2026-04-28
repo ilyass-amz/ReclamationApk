@@ -62,10 +62,7 @@ function App() {
   return (
     <div className="layout">
       <header className="topbar">
-        <h1 className="app-title">
-          <span className="app-title-main">APT</span>
-          <span className="app-title-accent">IV</span>
-        </h1>
+        <h1 className="app-name"><span className="accent-dot">•</span> APTIV <span className="accent-dot">•</span></h1>
         <nav className="nav">
           <NavLink to="/">Dashboard</NavLink>
           <NavLink to="/reclamations">My Reclamations</NavLink>
@@ -74,10 +71,10 @@ function App() {
         <div className="user-box">
           <button
             type="button"
-            className="theme-btn"
+            className="theme-btn icon-only"
             onClick={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
-            aria-label="Toggle theme"
-            title={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+            title={theme === 'dark' ? 'Passer en light mode' : 'Passer en dark mode'}
+            aria-label={theme === 'dark' ? 'Passer en light mode' : 'Passer en dark mode'}
           >
             {theme === 'dark' ? '☀' : '🌙'}
           </button>
