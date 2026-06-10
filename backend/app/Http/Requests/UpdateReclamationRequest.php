@@ -29,7 +29,7 @@ class UpdateReclamationRequest extends FormRequest
             'location' => ['nullable', 'string', 'max:255'],
             'department' => ['sometimes', 'required', 'string', 'max:255'],
             'priority' => ['sometimes', 'required', 'in:low,medium,high'],
-            'status' => ['sometimes', 'required', 'in:pending,in_progress,resolved'],
+            'status' => ['sometimes', 'required', 'in:pending,in_progress,resolved,rejected,closed'],
             'solution' => ['nullable', 'string'],
         ];
     }

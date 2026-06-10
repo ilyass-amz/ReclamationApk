@@ -22,9 +22,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'email',
+        'phone',
         'matricule',
         'department',
         'role',
+        'is_active',
         'avatar',
         'password',
     ];
@@ -48,6 +51,7 @@ class User extends Authenticatable
     {
         return [
             'password' => 'hashed',
+            'is_active' => 'boolean',
         ];
     }
 
@@ -55,4 +59,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reclamation::class);
     }
+
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(MaintenanceTask::class, 'technician_id');
+    }
+
+    public function assignedTasks(): HasMany
+    {
+        return $this->hasMany(MaintenanceTask::class, 'assigned_by');
+    }
 }
+

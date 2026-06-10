@@ -5,31 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class ReclamationComment extends Model
+class TaskMessage extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'reclamation_id',
+        'maintenance_task_id',
         'user_id',
-        'comment',
+        'message',
     ];
 
-    public function reclamation(): BelongsTo
+    public function task(): BelongsTo
     {
-        return $this->belongsTo(Reclamation::class);
+        return $this->belongsTo(MaintenanceTask::class, 'maintenance_task_id');
     }
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-
-    public function attachments(): MorphMany
-    {
-        return $this->morphMany(Attachment::class, 'attachable');
-    }
 }
-
